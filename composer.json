@@ -1,0 +1,33 @@
+{
+    "name": "neoblack/typo3-laraval",
+    "description": "laravel for TYPO3",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Frank Nägler",
+            "role": "Developer",
+            "homepage": "https://naegler.hamburg/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NeoBlack\\Laravel\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NeoBlack\\Laravel\\Tests\\": "Tests/"
+        }
+    },
+    "require": {
+        "typo3/cms-core": "^8.7",
+        "laravel/framework": "^5.4"
+    },
+    "config": {
+        "vendor-dir": "../../../vendor/"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }
+}
