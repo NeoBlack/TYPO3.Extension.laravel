@@ -1,5 +1,5 @@
 <?php
-namespace NeoBlack\TYPO3;
+namespace NeoBlack\Laravel\TYPO3;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 

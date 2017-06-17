@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoBlack\Http\Controller;
+namespace NeoBlack\Laravel\Http\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

@@ -5,11 +5,11 @@ if (!defined('TYPO3_MODE')) {
 }
 
 call_user_func(function () {
-    \NeoBlack\TYPO3\Utility::registerPlugin([
+    \NeoBlack\Laravel\TYPO3\Utility::registerPlugin([
         'extensionKey' => 'laravel',
         'pluginName' => 'demoPlugin',
         'pluginTitle' => 'Laravel Demo Plugin',
-        'pluginClass' => \NeoBlack\Http\Controller\DemoController::class,
+        'pluginClass' => \NeoBlack\Laravel\Http\Controller\DemoController::class,
         'pluginIconPathAndFilename' => 'EXT:laravel/Resource/Public/Icons/DemoPlugin.svg',
     ]);
 });
