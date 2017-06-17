@@ -27,6 +27,10 @@
     "config": {
         "vendor-dir": "../../../vendor/"
     },
+    "replace": {
+        "laravel": "self.version",
+        "neoblack/typo3-laravel": "self.version"
+    },
     "require-dev": {
         "phpunit/phpunit": "^5.7"
     }
