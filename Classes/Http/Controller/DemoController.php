@@ -27,10 +27,13 @@ class DemoController extends AbstractPluginController
 {
     /**
      * DemoController constructor.
+     *
+     * @throws \InvalidArgumentException
      */
     public function __construct()
     {
         $this->allowedActions[] = 'demo';
+        parent::__construct();
     }
 
     /**
@@ -41,7 +44,7 @@ class DemoController extends AbstractPluginController
      */
     protected function indexAction(Request $request, Response $response): Response
     {
-        $response->setContent('indexAction');
+        $response->setContent($this->view->render());
         return $response;
     }
 
@@ -53,7 +56,7 @@ class DemoController extends AbstractPluginController
      */
     protected function demoAction(Request $request, Response $response): Response
     {
-        $response->setContent('demoAction');
+        $response->setContent($this->view->render());
         return $response;
     }
 }

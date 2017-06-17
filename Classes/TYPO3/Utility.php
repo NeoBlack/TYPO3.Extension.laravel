@@ -30,9 +30,7 @@ class Utility
      * @param array $pluginData see the following list for expected keys
      * - $pluginData['extensionKey']: required, the extension key
      * - $pluginData['pluginName']: required, the name for the plugin
-     * - $pluginData['pluginTitle']: required, the title for the backend
      * - $pluginData['pluginClass']: required, the full qualified class name, must be an instance of NeoBlack\Http\Controller\AbstractPluginController
-     * - $pluginData['pluginIconPathAndFilename']: required, the icon path an filename
      * - $pluginData['pluginType']: optional, default: static::PLUGIN_TYPE_PLUGIN
      *
      * @throws \InvalidArgumentException
@@ -41,9 +39,7 @@ class Utility
     {
         $extensionKey = $pluginData['extensionKey'];
         $pluginName = $pluginData['pluginName'];
-        $pluginTitle = $pluginData['pluginTitle'];
         $pluginClass = $pluginData['pluginClass'];
-        $pluginIconPathAndFilename = $pluginData['pluginIconPathAndFilename'];
         $pluginType = $pluginData['pluginType'] ?? static::PLUGIN_TYPE_PLUGIN;
         $pluginSignature = strtolower($extensionKey . '_' . $pluginName);
 
@@ -53,6 +49,7 @@ class Utility
                 $pluginContent[] = 'tt_content.list.20.' . $pluginSignature . ' = USER';
                 $pluginContent[] = 'tt_content.list.20.' . $pluginSignature . ' {';
                 $pluginContent[] = '    userFunc = ' . $pluginClass . '->dispatch';
+                $pluginContent[] = '    userFunc.pluginName = ' . $pluginName;
                 $pluginContent[] = '}';
                 $pluginContent = implode(LF, $pluginContent);
                 break;
@@ -64,6 +61,7 @@ class Utility
                 $pluginContent[] = '    20 = USER';
                 $pluginContent[] = '    20 {';
                 $pluginContent[] = '        userFunc = ' . $pluginClass . '->dispatch';
+                $pluginContent[] = '        userFunc.pluginName = ' . $pluginName;
                 $pluginContent[] = '    }';
                 $pluginContent[] = '}';
                 $pluginContent = implode(LF, $pluginContent);
@@ -75,10 +73,5 @@ class Utility
         $setup[] = '# Setting ' . $pluginSignature . ' plugin TypoScript';
         $setup[] = $pluginContent;
         ExtensionManagementUtility::addTypoScript($pluginSignature, 'setup', implode(LF, $setup), 'defaultContentRendering');
-        ExtensionManagementUtility::addPlugin(
-            [$pluginTitle, $pluginSignature, $pluginIconPathAndFilename],
-            $pluginType,
-            $extensionKey
-        );
     }
 }

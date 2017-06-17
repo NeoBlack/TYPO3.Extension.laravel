@@ -1,0 +1,7 @@
+plugin.tx_laravel {
+    view {
+        templateRootPaths.100 = EXT:laravel/Resources/Private/Templates/
+        partialRootPaths.100 = EXT:laravel/Resources/Private/Partials/
+        layoutRootPaths.100 = EXT:laravel/Resources/Private/Layouts/
+    }
+}

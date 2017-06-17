@@ -8,8 +8,12 @@ call_user_func(function () {
     \NeoBlack\Laravel\TYPO3\Utility::registerPlugin([
         'extensionKey' => 'laravel',
         'pluginName' => 'demoPlugin',
-        'pluginTitle' => 'Laravel Demo Plugin',
         'pluginClass' => \NeoBlack\Laravel\Http\Controller\DemoController::class,
-        'pluginIconPathAndFilename' => 'EXT:laravel/Resource/Public/Icons/DemoPlugin.svg',
+    ]);
+    \NeoBlack\Laravel\TYPO3\Utility::registerPlugin([
+        'extensionKey' => 'laravel',
+        'pluginName' => 'demoPluginContent',
+        'pluginClass' => \NeoBlack\Laravel\Http\Controller\DemoController::class,
+        'pluginType' => \NeoBlack\Laravel\TYPO3\Utility::PLUGIN_TYPE_CONTENT_ELEMENT
     ]);
 });
