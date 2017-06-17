@@ -24,9 +24,6 @@
         "typo3/cms-core": "^8.7",
         "laravel/framework": "^5.4"
     },
-    "config": {
-        "vendor-dir": "../../../vendor/"
-    },
     "replace": {
         "laravel": "self.version",
         "neoblack/typo3-laravel": "self.version"
