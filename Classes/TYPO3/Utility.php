@@ -64,6 +64,7 @@ class Utility
                 $pluginContent[] = '    20 = USER';
                 $pluginContent[] = '    20 {';
                 $pluginContent[] = '        userFunc = ' . $pluginClass . '->dispatch';
+                $pluginContent[] = '    }';
                 $pluginContent[] = '}';
                 $pluginContent = implode(LF, $pluginContent);
                 break;
