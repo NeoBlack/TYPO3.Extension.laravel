@@ -2,7 +2,7 @@
     "name": "neoblack/typo3-laraval",
     "description": "laravel for TYPO3",
     "type": "typo3-cms-extension",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Frank Nägler",
@@ -25,7 +25,7 @@
         "laravel/framework": "^5.4"
     },
     "replace": {
-        "laravel": "self.version",
+        "typo3-ter/laravel": "self.version",
         "neoblack/typo3-laravel": "self.version"
     },
     "require-dev": {
